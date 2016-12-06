@@ -4,9 +4,14 @@ import org.junit.Test;
 
 public class TriangleTest {
 
-	@Test
-	public void testTriangle() {
-		fail("Not yet implemented");
+	@Test(expected = IllegalArgumentException.class)
+	public void testCheckIntegrity() {
+		String[] str = new String[3];
+		str[0] = "3";
+		str[1] = "4";
+		str[2] = "7";
+		Triangle t = new Triangle(3, 4, 7);
+		t.createTriangle(str)str.
 	}
 
 	@Test
@@ -16,7 +21,11 @@ public class TriangleTest {
 
 	@Test
 	public void testCreateTriangle() {
-		fail("Not yet implemented");
+		String[] str = new String[3];
+		str[0] = "3";
+		str[1] = "4";
+		str[2] = "7";
+		System.out.println(createTriangle(str));
 	}
 
 	@Test
