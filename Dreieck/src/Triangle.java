@@ -28,7 +28,9 @@ public class Triangle {
 	 * @throws {@link IllegalArgumentException} if the side lengths do not describe a triangle
 	 */
 	private void checkIntegrity() throws IllegalArgumentException {
-		//toDo...
+		if((a+b < c) || (a+c < b) || b+c <a){
+			throw new IllegalArgumentException("this can't be a triangle!!");
+		}
 	}
 
 	/**
