@@ -29,7 +29,7 @@ public class Triangle {
 	 */
 	private void checkIntegrity() throws IllegalArgumentException {
 		if((a+b < c) || (a+c < b) || b+c <a){
-			throw new IllegalArgumentException("this can't be a triangle!!");
+			throw new IllegalArgumentException("this can't be a triangle!!	");
 		}
 	}
 
@@ -63,11 +63,21 @@ public class Triangle {
 	 * @throws {@link IllegalArgumentException} if the sides array does not represent a triangle
 	 */
 	public static Triangle createTriangle(String[] sides) throws IllegalArgumentException {
+		if(sides.length > 3 || sides.length < 3){
+			throw new IllegalArgumentException("a triangle has exactly 3 sides!");
+		}
+		
 		int a = Integer.parseInt(sides[0]);
 		int b = Integer.parseInt(sides[1]);
 		int c = Integer.parseInt(sides[2]);
-		Triangle dreick = new Triangle(a, b, c);
-		return dreick;
+		
+		if(a == (int)a && b == (int) b && c == (int)c){
+			Triangle dreick = new Triangle(a, b, c);
+			return dreick;			
+		}
+		else throw new IllegalArgumentException("the sides must be integers!");
+		
+		
 	}
 
 	/**
@@ -80,21 +90,25 @@ public class Triangle {
 	@Override
 	public String toString() {
 		// TODO: Implement this method   -> not sure what this is good for though
+		String str;
 		switch(type) {
 		case ISOSCELES:
-			return "gleichschenklich";
+			str = "gleichschenklich";
+			break;
 			
 		case EQUILATERAL:
-			return"gleichseitig";
+			str = "gleichseitig";
+			break;
 			
 		case SCALENE:
-			return "ungleichseitig";
+			str = "ungleichseitig";
+			break;
 			
 		default:
-			return "invalid type!";
-			
-				
+			str = "invalid type!";
+			break;				
 		}
+		return str;
 	}
 
 	public static void main(String[] args) {
