@@ -10,7 +10,7 @@ public class TriangleTest {
 		str[0] = "3";
 		str[1] = "4";
 		str[2] = "7";
-		Triangle t = new Triangle(3, 4, 7);
+		Triangle.main(str);
 	}
 
 	@Test
@@ -18,7 +18,7 @@ public class TriangleTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
+/*	@Test
 	public void testCreateTriangle() {
 		String[] str = new String[3];
 		str[0] = "3";
@@ -26,7 +26,7 @@ public class TriangleTest {
 		str[2] = "7";
 		System.out.println(createTriangle(str));
 	}
-
+*/
 	@Test
 	public void testToString() {
 		fail("Not yet implemented");
