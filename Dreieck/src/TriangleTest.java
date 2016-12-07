@@ -13,28 +13,42 @@ public class TriangleTest {
 		Triangle.main(str);
 	}
 
-	@Test
-	public void testGetType() {
-		fail("Not yet implemented");
-	}
 
-/*	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testCreateTriangle() {
 		String[] str = new String[3];
-		str[0] = "3";
+		str[0] = "3.4";
 		str[1] = "4";
 		str[2] = "7";
-		System.out.println(createTriangle(str));
-	}
-*/
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
+		Triangle.main(str);
 	}
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testMain() {
-		fail("Not yet implemented");
+		String[] str = new String[3];
+		str[0] = "0";
+		str[1] = "0";
+		str[2] = "0";
+		Triangle.main(str);		
+	}
+	
+	@Test
+	public void testDescending() {
+		String[] str = new String[3];
+		str[0] = "4";
+		str[1] = "3";
+		str[2] = "2";
+		Triangle.main(str);		
+	}
+	
+	
+	@Test
+	public void testMax(){
+		String[] str = new String[3];
+		str[0] = "2147483647";
+		str[1] = "2147483647";
+		str[2] = "4";
+		Triangle.main(str);		
 	}
 
 }

@@ -30,7 +30,13 @@ public class Triangle {
 	 * @throws {@link IllegalArgumentException} if the side lengths do not describe a triangle
 	 */
 	private void checkIntegrity() throws IllegalArgumentException {
-		if((a+b <= c) || (a+c <= b) || b+c <= a){
+		if(a >= 1073741824 || b >= 1073741824 || c >= 1073741824){
+			if((a/2+b/2 <= c/2) || (a/2+c/2 <= b/2) || b/2+c/2 <= a/2){
+				throw new IllegalArgumentException("this can't be a triangle!!	");
+			}
+		}
+		
+		else if((a+b <= c) || (a+c <= b) || b+c <= a){
 			throw new IllegalArgumentException("this can't be a triangle!!	");
 		}
 	}
@@ -73,13 +79,11 @@ public class Triangle {
 		int b = Integer.parseInt(sides[1]);
 		int c = Integer.parseInt(sides[2]);
 		
-		 if(a == (int)a && b == (int) b && c == (int)c){
-			Triangle dreieck = new Triangle(a, b, c);
-			dreieck.checkIntegrity();
-			dreieck.determineType();
-			return dreieck;			
-		}
-		else throw new IllegalArgumentException("the sides must be integers!");
+		
+		Triangle dreieck = new Triangle(a, b, c);
+		dreieck.checkIntegrity();
+		dreieck.determineType();
+		return dreieck;			
 		
 		
 	}
