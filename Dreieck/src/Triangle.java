@@ -73,13 +73,13 @@ public class Triangle {
 		int b = Integer.parseInt(sides[1]);
 		int c = Integer.parseInt(sides[2]);
 		
-		//if(a == (int)a && b == (int) b && c == (int)c){
+		if(a == (int)a && b == (int) b && c == (int)c){
 			Triangle dreieck = new Triangle(a, b, c);
 			dreieck.checkIntegrity();
 			dreieck.determineType();
 			return dreieck;			
-		//}
-		//else throw new IllegalArgumentException("the sides must be integers!");
+		}
+		else throw new IllegalArgumentException("the sides must be integers!");
 		
 		
 	}

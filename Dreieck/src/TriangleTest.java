@@ -11,7 +11,6 @@ public class TriangleTest {
 		str[1] = "4";
 		str[2] = "7";
 		Triangle t = new Triangle(3, 4, 7);
-		t.createTriangle(str)str.
 	}
 
 	@Test
